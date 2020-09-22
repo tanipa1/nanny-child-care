@@ -7,6 +7,7 @@ use App\Http\Controllers\User\AccountController;
 
 // Admin Controllers
 use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\BannerController;
 
 
@@ -46,6 +47,9 @@ Route::group(['prefix'=>'account','as'=>'account.', 'middleware' => ['auth', 'us
 // Admin Routes
 Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => ['auth', 'adminPermission']], function(){
     Route::get('/dashboard',[MainController::class, 'dashboard'])->name('dashboard');
+
+    Route::resource('services', ServicesController::class);
+
     Route::get('/banner',[BannerController::class, 'index'])->name('banner.index');
     Route::get('/banner/create',[BannerController::class, 'create'])->name('banner.create');
     Route::post('/banner',[BannerController::class, 'store'])->name('banner.store');
