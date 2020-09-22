@@ -27,7 +27,9 @@
                     <div class="col-12">
                         <div class="d-flex">
                             <div>
-                                <img src="{{asset('website/images/static/Logo.png')}}" class="img-fluid">
+                                <a href="{{url('/')}}">
+                                    <img src="{{asset('website/images/static/Logo.png')}}" class="img-fluid">
+                                </a>
                             </div>
 
                             <div class="ml-auto">
@@ -37,7 +39,14 @@
                                         <li><a href="{{url('/about-us')}}">about us</a></li>
                                         <li><a href="{{url('/services')}}">services</a></li>
                                         <li><a href="{{url('/contact-us')}}">contact</a></li>
-                                        <li><a href="{{url('/')}}">login</a></li>
+
+                                        @if(Auth::User() && Auth::User()->admin == 0)
+                                            <li><a href="{{route('account.dashboard')}}">profile</a></li>
+                                        @elseif(Auth::User() && Auth::User()->admin == 1)
+                                            <li><a href="{{route('admin.dashboard')}}">dashboard</a></li>
+                                        @else
+                                            <li><a href="{{url('/login')}}">login</a></li>
+                                        @endif
                                     </ul>
                                </div>
                                <!-- Toggle Button -->
@@ -53,7 +62,6 @@
                 </div>
             </div>
         </div>
-
 
         <main class="main">
             @yield('content')

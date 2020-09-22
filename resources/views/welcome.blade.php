@@ -4,15 +4,11 @@
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{asset('website/images/slider/01.jpg')}}" class="w-100 img-fluid">
+        @foreach($banners as $key => $banner)
+        <div class="carousel-item  {{ $loop->first ? 'active' : '' }}">
+            <img src="{{url('')}}/website/images/banners/{{$banner->banner_image}}" class="w-100 img-fluid">
         </div>
-        <div class="carousel-item">
-            <img src="{{asset('website/images/slider/02.jpg')}}" class="w-100 img-fluid">
-        </div>
-        <div class="carousel-item">
-            <img src="{{asset('website/images/slider/03.jpg')}}" class="w-100 img-fluid">
-        </div>
+        @endforeach
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

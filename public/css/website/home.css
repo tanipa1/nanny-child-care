@@ -66,6 +66,126 @@
 
 /* About End */
 
+/* Services Start */
+
+.services .header {
+    width: 100%;
+    background: url('../../website/images/static/bg2.jpg') center center fixed;
+    background-size: cover;
+    height: 250px;
+    position: relative;
+}
+
+.services .header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+.services .header h2 {
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 2px;
+    word-spacing: 10px;
+    margin-bottom: 0px;
+    font-weight: 900;
+}
+
+.services .header h5 {
+    color: #FFF;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.services .main-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.services .main-content h2 {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #d5009d;
+}
+
+.services .main-content .card {
+    overflow: hidden;
+}
+
+.services .main-content .card img {
+    max-height: 330px;
+}
+
+.services .main-content .card .card-body h5 {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #000;
+}
+
+.services .main-content .card .card-body p {
+    font-size: 15px;
+    line-height: 1.8rem;
+}
+
+/* Services End */
+
+/* Auth Start */
+
+.auth {
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 50px;
+}
+
+.auth .card {
+    border-radius: 8px;
+}
+
+.auth .card .card-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.auth .card .card-header h4 {
+    font-weight: 900;
+    margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.auth .card .card-body {
+    color: #000;
+    font-weight: 400;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.auth .card .card-body .form-control {
+    color: #000;
+}
+
+.auth .card .card-body .form-control:focus {
+    border: 1px solid #000;
+}
+
+@media(max-width: 576px) {
+    .auth .card {
+        width: 90vw;
+    }
+}
+
+@media(min-width: 576px) {
+    .auth .card {
+        width: 500px;
+    }
+}
+
+/* Auth End */
+
 .flex-center {
     display: -webkit-box;
     display: -ms-flexbox;
