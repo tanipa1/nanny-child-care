@@ -59,11 +59,25 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>Products</span></p>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog mr-2"></i>
+                        <p>Service sections <i class="right fas fa-angle-left"></i></p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <?php
+                            use App\Models\Services;
+                            $services = Services::all();
+                                foreach($services as $service){
+                        ?>
+                        <li class="nav-item">
+                            <a href="{{route('admin.banner.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{$service->service_title}}</p>
+                            </a>
+                        </li>
+                        <?php }?>
+                    </ul>
                 </li>
 
                 <li class="nav-item">

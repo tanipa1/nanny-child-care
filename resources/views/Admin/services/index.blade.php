@@ -50,7 +50,7 @@
                             </p>
                         </td>
                         <td class="text-center">
-                            <a href="" type="button" class="btn btn-sm btn-info rounded-0 shadow-none text-white"><i class="fas fa-pen"></i></a>
+                            <a href="{{route('admin.services.edit', $service->id)}}" type="button" class="btn btn-sm btn-info rounded-0 shadow-none text-white"><i class="fas fa-pen"></i></a>
                           
                             <form action="{{route('admin.services.destroy',$service->id)}}" method="post"
                                 onsubmit="return confirm('Are you sure ?')">

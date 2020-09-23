@@ -68,7 +68,7 @@ class ServicesController extends Controller
      */
     public function show($id)
     {
-        return view('Admin.services.edit');
+        // 
     }
 
     /**
@@ -79,7 +79,8 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $service = Services::find($id);
+        return view('Admin.services.edit', compact('service'));
     }
 
     /**
@@ -91,7 +92,28 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'service_title' => 'required',
+            'service_description' => 'required',
+            'service_image' => 'required',
+        ]);
+
+        $file = $request->file('service_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('website/images/services', $filename);
+
+
+        $form_data = array(
+            'service_title'=> $request->service_title,
+            'service_description'=> $request->service_description,
+            'service_image'=> $filename,
+            'is_upcoming'=> $request->is_upcoming,
+        );
+
+        $record = Services::find($id);
+        $record->update($form_data);
+        return redirect()->back()->with('success', 'Successfully updated');
     }
 
     /**
