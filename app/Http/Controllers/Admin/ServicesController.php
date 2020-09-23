@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Services;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        return view('Admin.services.index');
+        $services = Services::all();
+        return view('Admin.services.index', compact('services'));
     }
 
     /**
@@ -35,7 +37,27 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'service_title' => 'required',
+            'service_description' => 'required',
+            'service_image' => 'required',
+        ]);
+
+        $file = $request->file('service_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('website/images/services', $filename);
+
+
+        $form_data = array(
+            'service_title'=> $request->service_title,
+            'service_description'=> $request->service_description,
+            'service_image'=> $filename,
+            'is_upcoming'=> $request->is_upcoming,
+        );
+
+        Services::create($form_data);
+        return redirect()->back()->with('success', 'Successfully service created .');
     }
 
     /**
@@ -80,6 +102,7 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Services::where('id',$id)->delete();
+        return redirect()->back()->with('success', 'Delete successfully');
     }
 }
