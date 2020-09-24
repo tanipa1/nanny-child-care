@@ -28,8 +28,10 @@
                     @if(Session::has('success'))
                         <p class="text-success mb-0">{{Session::get('success')}}</p>
                     @endif
-                    <form action="{{route('admin.services.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('admin.services.update', $service->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
+
                         <!-- Service title -->
                         <div class="form-group mb-3">
                             @if($errors->has('service_title'))

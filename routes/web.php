@@ -8,6 +8,7 @@ use App\Http\Controllers\User\AccountController;
 // Admin Controllers
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\ServicesController;
+use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\BannerController;
 
 
@@ -42,6 +43,8 @@ Route::post('/reset', [AuthController::class, 'resetPass'])->name('reset');
 // User Account Routes
 Route::group(['prefix'=>'account','as'=>'account.', 'middleware' => ['auth', 'userPermission']], function(){
     Route::get('/dashboard',[AccountController::class, 'dashboard'])->name('dashboard');
+    Route::post('/baby-add',[AccountController::class, 'addBabyInfo'])->name('baby.add');
+    Route::get('/baby-suggestion',[AccountController::class, 'babySuggestion'])->name('baby.suggestion');
 });
 
 // Admin Routes
@@ -49,6 +52,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => ['auth', 'adminP
     Route::get('/dashboard',[MainController::class, 'dashboard'])->name('dashboard');
 
     Route::resource('services', ServicesController::class);
+    Route::resource('section', SectionController::class);
 
     Route::get('/banner',[BannerController::class, 'index'])->name('banner.index');
     Route::get('/banner/create',[BannerController::class, 'create'])->name('banner.create');

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+
     <link href="{{ asset('css/admin/adminlte.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/admin/OverlayScrollbars.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/admin/select2.min.css') }}" rel="stylesheet" />
