@@ -23,35 +23,17 @@
 
             <!-- Services -->
             <div class="row">
+                @foreach($running_services as $running_service)
                 <div class="col-12 col-sm-6 col-lg-4 mb-4">
                     <div class="card">
-                        <img src="{{asset('website/images/services/01.jpg')}}" class="img-fluid w-100">
+                        <img src="{{url('')}}/website/images/services/{{$running_service->service_image}}" class="img-fluid w-100">
                         <div class="card-body">
-                            <h5>child care</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur doloribus commodi itaque recusandae aliquam quisquam asperiores, consequatur id suscipit?</p>
+                            <h5>{{$running_service->service_title}}</h5>
+                            <p>{{$running_service->service_description}}</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <img src="{{asset('website/images/services/02.jpg')}}" class="img-fluid w-100">
-                        <div class="card-body">
-                            <h5>child care</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur doloribus commodi itaque recusandae aliquam quisquam asperiores, consequatur id suscipit?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <img src="{{asset('website/images/services/03.jpg')}}" class="img-fluid w-100">
-                        <div class="card-body">
-                            <h5>child care</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur doloribus commodi itaque recusandae aliquam quisquam asperiores, consequatur id suscipit?</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <!-- Contact -->
@@ -72,36 +54,18 @@
                     <h2>UPCOMING SERVICES</h2>
                 </div>
 
-
+                @foreach($upcoming_services as $upcoming_service)
                 <div class="col-12 col-sm-6 col-lg-4 mb-4">
                     <div class="card">
-                        <img src="{{asset('website/images/services/01.jpg')}}" class="img-fluid w-100">
+                        <img src="{{url('')}}/website/images/services/{{$upcoming_service->service_image}}" class="img-fluid w-100">
                         <div class="card-body">
-                            <h5>child care</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur doloribus commodi itaque recusandae aliquam quisquam asperiores, consequatur id suscipit?</p>
+                            <h5>{{$upcoming_service->service_title}}</h5>
+                            <p>{{$upcoming_service->service_description}}</p>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <img src="{{asset('website/images/services/02.jpg')}}" class="img-fluid w-100">
-                        <div class="card-body">
-                            <h5>child care</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur doloribus commodi itaque recusandae aliquam quisquam asperiores, consequatur id suscipit?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <img src="{{asset('website/images/services/03.jpg')}}" class="img-fluid w-100">
-                        <div class="card-body">
-                            <h5>child care</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur doloribus commodi itaque recusandae aliquam quisquam asperiores, consequatur id suscipit?</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>

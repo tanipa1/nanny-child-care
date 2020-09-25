@@ -6,6 +6,91 @@
     padding-top: 73px;
 }
 
+/* Welcome start */
+
+.description {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.description img {
+    max-height: 320px;
+}
+
+@media(min-width: 992px) {
+    .description {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.gallery {
+    padding-bottom: 50px;
+}
+
+.gallery .photo-card {
+    float: left;
+    overflow: hidden;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.gallery .photo-card img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.gallery .photo-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.377);
+    transition: 0.4s all;
+    opacity: 0;
+    padding: 10px;
+}
+
+.gallery .photo-card .overlay p {
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.gallery .photo-card:hover .overlay {
+    opacity: 1;
+}
+
+@media(max-width: 576px) {
+    .gallery .photo-card {
+        width: 100%;
+    }
+}
+
+@media(min-width: 576px) {
+    .gallery .photo-card {
+        width: 50%;
+    }
+}
+
+@media(min-width: 768px) {
+    .gallery .photo-card {
+        width: 33.33%;
+    }
+}
+
+@media(min-width: 992px) {
+    .gallery {
+        padding-bottom: 100px;
+    }
+}
+
+/* Welcome end */
+
 /* About Start */
 
 .about .header {
@@ -132,6 +217,42 @@
 
 /* Services End */
 
+/* Conatct Start */
+
+.contact .header img {
+    max-height: 400px;
+}
+
+.contact .main-content h1 {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #d5009d;
+}
+
+.contact .main-content form p {
+    padding-left: 3px;
+    margin-bottom: 2px;
+}
+
+.contact .main-content form .form-control {
+    font-size: 16px;
+    min-height: 47px;
+}
+
+.contact .main-content form .form-control:focus {
+    border: 1px solid #d5009d;
+}
+
+.contact .main-content form .btn {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 10px 30px;
+    background: #d5009d;
+}
+
+/* Contact End */
+
 /* Auth Start */
 
 .auth {
@@ -185,6 +306,19 @@
 }
 
 /* Auth End */
+
+/* Footer Start */
+
+.footer img {
+    height: 40px;
+}
+
+.footer a {
+    color: #000;
+    display: block;
+}
+
+/* Footer End */
 
 .flex-center {
     display: -webkit-box;

@@ -66,6 +66,44 @@
         <main class="main">
             @yield('content')
         </main>
+
+
+        <!-- Footer -->
+        <div class="footer py-4 py-lg-5 border-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-lg-4 text-center text-lg-left pr-lg-5 mb-4 mb-lg-0">
+                        <a href="{{url('/')}}">
+                            <img src="{{asset('website/images/static/Logo.png')}}" class="img-fluid">
+                        </a>
+                        <p class="mb-0 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quia sint autem a earum placeat. Ipsum id necessitatibus numquam natus?</p>
+                    </div>
+
+                    <div class="col-12 col-lg-3 text-center text-lg-left pr-lg-5 mb-4 mb-lg-0">
+                        <h5><b>Links</b></h5>
+                        <a href="{{url('/')}}">Home</a>
+                        <a href="{{url('/about-us')}}">About Us</a>
+                        <a href="{{url('/services')}}">Services</a>
+                        <a href="{{url('/contact-us')}}">Contact</a>
+                        @if(Auth::User() && Auth::User()->admin == 0)
+                            <a href="{{route('account.dashboard')}}">My Account</a>
+                        @elseif(Auth::User() && Auth::User()->admin == 1)
+                            <a href="{{route('admin.dashboard')}}">dashboard</a>
+                        @else
+                            <a href="{{url('/login')}}">Login Account</a>
+                        @endif
+                    </div>
+
+                    <div class="col-12 col-lg-5 text-center text-lg-left pr-lg-5 mb-4 mb-lg-0">
+                        <h5><b>Find Us</b></h5>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14594.204403701864!2d90.31175934999999!3d23.870069049999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c224dd9d88f5%3A0x9a9e728879b7600d!2sAshulia%20Model%20Town%20Park!5e0!3m2!1sen!2sbd!4v1601070183695!5m2!1sen!2sbd" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </div>
     <script>
         $(document).ready(function(){

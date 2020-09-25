@@ -22,47 +22,17 @@
 
             <div class="row">
 
-
+                @foreach($members as $member)
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card rounded-0">
-                        <img src="{{asset('website/images/team/01.jpg')}}" class="w-100 img-fluid">
+                        <img src="{{url('')}}/website/images/team/{{$member->image}}" class="w-100 img-fluid">
                         <div class="card-body text-center">
-                            <h5>davit leni</h5>
-                            <p>CEO</p>
+                            <h5>{{$member->name}}</h5>
+                            <p>{{$member->title}}</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card rounded-0">
-                        <img src="{{asset('website/images/team/02.jpg')}}" class="w-100 img-fluid">
-                        <div class="card-body text-center">
-                            <h5>davit leni</h5>
-                            <p>CEO</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card rounded-0">
-                        <img src="{{asset('website/images/team/03.jpg')}}" class="w-100 img-fluid">
-                        <div class="card-body text-center">
-                            <h5>davit leni</h5>
-                            <p>CEO</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card rounded-0">
-                        <img src="{{asset('website/images/team/04.jpg')}}" class="w-100 img-fluid">
-                        <div class="card-body text-center">
-                            <h5>davit leni</h5>
-                            <p>CEO</p>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
 
             </div>
         </div>

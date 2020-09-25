@@ -9,6 +9,8 @@ use App\Http\Controllers\User\AccountController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\SectionController;
+use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\BannerController;
 
 
@@ -32,6 +34,7 @@ Route::get('/contact-us',[WebsiteController::class, 'contact'])->name('contact')
 Route::get('/login',[WebsiteController::class, 'login'])->name('login');
 Route::get('/register',[WebsiteController::class, 'register'])->name('register');
 Route::get('/reset',[WebsiteController::class, 'reset'])->name('reset');
+Route::post('/message',[WebsiteController::class, 'mailSend'])->name('message');
 Route::get('/denied',[WebsiteController::class, 'denied'])->name('denied');
 
 // Auth Routes
@@ -53,6 +56,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => ['auth', 'adminP
 
     Route::resource('services', ServicesController::class);
     Route::resource('section', SectionController::class);
+    Route::resource('team', TeamController::class);
+    Route::resource('gallery', GalleryController::class);
 
     Route::get('/banner',[BannerController::class, 'index'])->name('banner.index');
     Route::get('/banner/create',[BannerController::class, 'create'])->name('banner.create');

@@ -36,6 +36,16 @@
     }
 }
 
+/* Suggestion */
+
+.suggestion table tr td {
+    min-width: 110px;
+}
+
+.suggestion table tr td p {
+    margin-bottom: 0;
+}
+
 .flex-center {
     display: -webkit-box;
     display: -ms-flexbox;
