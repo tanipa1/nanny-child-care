@@ -54,6 +54,8 @@
                     <div class="page-links">
                         <a href="{{route('account.dashboard')}}" type="button" class="btn shadow-none rounded-0 border-bottom text-danger btn-block text-left p-2 m-0">Your profile</a>
                         <a href="{{route('account.baby.suggestion')}}" type="button" class="btn shadow-none rounded-0 border-bottom text-danger btn-block text-left p-2 m-0">Baby suggestion</a>
+                        <a href="{{url('account/nanny/hire')}}" type="button" class="btn shadow-none rounded-0 border-bottom text-danger btn-block text-left p-2 m-0">Nanny</a>
+                        <a href="{{url('account/payment')}}" type="button" class="btn shadow-none rounded-0 border-bottom text-danger btn-block text-left p-2 m-0">Nanny Payment</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-8 col-lg-9 mt-3 mt-md-0">

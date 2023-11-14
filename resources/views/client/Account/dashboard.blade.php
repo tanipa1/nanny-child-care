@@ -8,7 +8,7 @@
     <div class="main-content">
         <div class="card border-0 rounded-0 shadow-sm">
             <div class="card-body">
-                <p class="mb-2">You,</p>
+                <p class="mb-2">Hello,</p>
                 <h5 class="mb-2"><b><span><i class="fas fa-user-tie text-muted mr-2"></i></span>{{Auth()->User()->name}}</b></h5>
                 <p><span><i class="fas fa-envelope text-muted mr-2"></i></span>{{Auth()->User()->email}}</p>
             </div>

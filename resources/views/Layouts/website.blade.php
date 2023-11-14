@@ -28,8 +28,9 @@
                         <div class="d-flex">
                             <div>
                                 <a href="{{url('/')}}">
-                                    <img src="{{asset('website/images/static/Logo.png')}}" class="img-fluid">
+                                    <img src="{{asset('website/images/static/Logo.png')}}" class="img-fluid p-0 text-success">
                                 </a>
+                                <p class="m-0 pl-4 "><small>An Automated Childcare System</small></p>
                             </div>
 
                             <div class="ml-auto">
@@ -47,6 +48,7 @@
                                         @else
                                             <li><a href="{{url('/login')}}">login</a></li>
                                         @endif
+                                        <li> <a class="btn btn-outline-success" href="{{ url('nanny/hire') }}">Nanny hire</a> </li>
                                     </ul>
                                </div>
                                <!-- Toggle Button -->
@@ -77,7 +79,8 @@
                         <a href="{{url('/')}}">
                             <img src="{{asset('website/images/static/Logo.png')}}" class="img-fluid">
                         </a>
-                        <p class="mb-0 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quia sint autem a earum placeat. Ipsum id necessitatibus numquam natus?</p>
+                        <p class="m-0 pl-4 "><small>An Automated Childcare System</small></p>
+                        <p class="mb-0 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quia sint autem a earum placeat. Ipsum id necessitatibus numquam natus?</p>
                     </div>
 
                     <div class="col-12 col-lg-3 text-center text-lg-left pr-lg-5 mb-4 mb-lg-0">

@@ -60,6 +60,20 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{url('admin/nanny')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>Nanny</span></p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{url('admin/payment')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>Payment</span></p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('admin.section.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>Sections</span></p>

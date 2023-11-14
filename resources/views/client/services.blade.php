@@ -26,7 +26,7 @@
                 @foreach($running_services as $running_service)
                 <div class="col-12 col-sm-6 col-lg-4 mb-4">
                     <div class="card">
-                        <img src="{{url('')}}/website/images/services/{{$running_service->service_image}}" class="img-fluid w-100">
+                        <img src="{{url('')}}/website/images/services/{{$running_service->service_image}}" style="height:300px" class="img-fluid w-100">
                         <div class="card-body">
                             <h5>{{$running_service->service_title}}</h5>
                             <p>{{$running_service->service_description}}</p>
@@ -39,7 +39,7 @@
             <!-- Contact -->
             <div class="row my-5 py-5 bg-light">
                 <div class="col-12 col-lg-9 text-center text-lg-left mb-4 mb-lg-0">
-                    <h5 class="mb-4">Call us today at +8801354702974 or Email us at example@gmail.com</h5>
+                    <h5 class="mb-4">Call us today at +8801886860386 or Email us at tania35.291@gmail.com</h5>
                     <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, soluta.</p>
                 </div>
                 <div class="col-12 col-lg-3 text-center">
@@ -57,7 +57,7 @@
                 @foreach($upcoming_services as $upcoming_service)
                 <div class="col-12 col-sm-6 col-lg-4 mb-4">
                     <div class="card">
-                        <img src="{{url('')}}/website/images/services/{{$upcoming_service->service_image}}" class="img-fluid w-100">
+                        <img src="{{url('')}}/website/images/services/{{$upcoming_service->service_image}}" class="p-2 img-fluid w-100">
                         <div class="card-body">
                             <h5>{{$upcoming_service->service_title}}</h5>
                             <p>{{$upcoming_service->service_description}}</p>

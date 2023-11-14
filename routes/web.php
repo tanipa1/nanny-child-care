@@ -7,12 +7,13 @@ use App\Http\Controllers\User\AccountController;
 
 // Admin Controllers
 use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\NannyController;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\BannerController;
-
+use App\Http\Controllers\Admin\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,18 @@ Route::get('/reset',[WebsiteController::class, 'reset'])->name('reset');
 Route::post('/message',[WebsiteController::class, 'mailSend'])->name('message');
 Route::get('/denied',[WebsiteController::class, 'denied'])->name('denied');
 
+//nanny
+Route::get('/nanny/hire',[App\Http\Controllers\User\NannyController::class, 'index']);
+Route::get('/nanny/hire/{id}',[App\Http\Controllers\User\NannyController::class, 'hire'])->middleware('auth');
+Route::get('/nanny/hire/cancel/{id}',[App\Http\Controllers\User\NannyController::class, 'cancel'])->middleware('auth');
+Route::get('/nanny/{id}',[App\Http\Controllers\User\NannyController::class, 'show']);
+Route::post('/payment/store/{id}',[App\Http\Controllers\User\NannyController::class, 'store']);
+Route::get('/account/payment',[App\Http\Controllers\User\PaymentController::class, 'index']);
+Route::get('/payment/{id}',[App\Http\Controllers\User\PaymentController::class, 'show']);
+
+
+//comment
+Route::post('/comment/{id}',[App\Http\Controllers\User\CommentController::class, 'store'])->middleware('auth');
 // Auth Routes
 Route::post('/register',[AuthController::class, 'registration'])->name('register');
 Route::post('/login',[AuthController::class, 'login'])->name('login');
@@ -48,6 +61,7 @@ Route::group(['prefix'=>'account','as'=>'account.', 'middleware' => ['auth', 'us
     Route::get('/dashboard',[AccountController::class, 'dashboard'])->name('dashboard');
     Route::post('/baby-add',[AccountController::class, 'addBabyInfo'])->name('baby.add');
     Route::get('/baby-suggestion',[AccountController::class, 'babySuggestion'])->name('baby.suggestion');
+    Route::get('/nanny/hire',[App\Http\Controllers\User\NannyController::class, 'own_nanny_list']);
 });
 
 // Admin Routes
@@ -63,4 +77,16 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => ['auth', 'adminP
     Route::get('/banner/create',[BannerController::class, 'create'])->name('banner.create');
     Route::post('/banner',[BannerController::class, 'store'])->name('banner.store');
     Route::delete('/banner/{id}',[BannerController::class, 'destroy'])->name('banner.destroy');
+
+    //nanny
+    Route::get('/nanny',[NannyController::class, 'index']);
+    Route::get('/nanny/create',[NannyController::class, 'create']);
+    Route::post('/nanny/store',[NannyController::class, 'store']);
+    Route::get('/nanny/edit/{id}',[NannyController::class, 'edit']);
+    Route::post('/nanny/update/{id}',[NannyController::class, 'update']);
+    Route::get('/nanny/delete/{id}',[NannyController::class, 'destroy']);
+
+    //payment
+    Route::get('/payment',[PaymentController::class, 'index']);
+    Route::get('/payment/{id}',[PaymentController::class, 'show']);
 });
